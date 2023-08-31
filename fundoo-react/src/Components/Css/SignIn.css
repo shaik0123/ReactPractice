@@ -1,0 +1,32 @@
+.input{
+    display: flex;
+    flex-direction: column;
+}
+.anchor{
+    color: blue;
+    font-weight: bold;
+}
+.form{
+    display: flex;
+    justify-content: center;
+
+}
+p{
+    text-align: center;
+}
+h1{
+    text-align: center;
+    
+}
+div.btn{
+    display: flex;
+    flex-direction: row;
+    justify-items: left;   
+}
+.app{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-flow: column;
+    margin-top: 150px;  
+}
