@@ -1,29 +1,30 @@
 import React from "react";
+import '../../Components/Css/SignIn.css';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-//import fundoologo from './Components/Images/Logo.png';
-
+import fundoologo from '../../Components/Images/Logo.png';
 
 
 function SignIn() {
     return (
-        <div className="form"><form>
-
+        <div className="form">
+            <img className="imgin " src={fundoologo} alt="logo"></img>
             <h1>Sign in</h1>
 
-            <p>with your google account</p>
+            <p>with your fundoo account</p>
             <div className="input">
-                <TextField id="standard-basic" label="Email" variant="standard" />
-                <TextField id="standard-basic" type="password" label="password" variant="standard" />
+                <TextField className="standard-basic" label="Email" variant="outlined" />
             </div>
-            <a className="anchor">Forgot Email?</a>
-            <p>Not your computer? Use Guest mode to sign in privately.</p>
-            <a className="anchor">Learn more</a>
-            <div >
-                <Button variant="text">Creat account</Button>
-                <Button className="btn" variant="contained">Next</Button>
+            <div className="input">
+                <TextField className="standard-basic" type="password" label="password" variant="outlined" />
             </div>
-        </form>
+            <div>
+                <a className="anchor" href="">Forgot Password?</a>
+            </div>
+            <div className="bottom">
+                <a className="signinbtn" href="/SignUp">Create account</a>
+                <Button className="btn" variant="contained">Register</Button>
+            </div>
         </div>
     )
 }

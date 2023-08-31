@@ -1,15 +1,19 @@
-.input{
-    display: flex;
-    flex-direction: column;
-}
-.anchor{
-    color: blue;
-    font-weight: bold;
-}
+
 .form{
     display: flex;
+    flex-direction: column;
     justify-content: center;
-
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.272);
+    width: 600px;
+    height: 600px;
+    border-radius: 20px;
+    margin-top: 50px;
+    
+    
+}
+.input{
+    margin: 10px;
 }
 p{
     text-align: center;
@@ -28,5 +32,19 @@ div.btn{
     align-items: center;
     flex-direction: row;
     flex-flow: column;
-    margin-top: 150px;  
+    
+}
+.anchor{
+    color: blue;
+    font-weight: bold;
+}
+.standard-basic{
+    width: 400px;
+}
+.bottom{
+    margin: 20px;
+
+}
+.imgin{
+    margin-left: 10px;
 }

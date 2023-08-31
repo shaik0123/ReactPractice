@@ -1,0 +1,33 @@
+.Regform{
+    display: flex;
+    justify-content: center;
+}
+.email{
+    margin-top: 10px;
+}
+#outlined{
+    width: 425px;
+}
+#outlined-password{
+    width: 190px
+}
+div .Ln{
+    margin-left: 10px;
+}
+div .btn{ 
+    margin-left: 200px;
+}
+img{
+    margin-left: 70px;
+}
+.img1{
+    margin-top: 200px;
+}
+div .dob{
+    margin-left: 10px;
+}
+.signinbtn{
+    text-decoration: none;
+    color: blue;
+
+}

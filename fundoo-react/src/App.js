@@ -1,9 +1,9 @@
 import logo from './logo.svg';
-import './App.css';
+//import './App.css';
 import SignIn from './Components/Forms/SignIn';
-import './Components/Css/SignIn.css';
-import fundoologo from './Components/Images/Logo.png';
 import SignUp from './Components/Forms/SignUp';
+
+
 
 function App() {
   return (
@@ -25,7 +25,6 @@ function App() {
     //   </header>
     // </div>
     <div className='app'>
-    <img src={fundoologo} className="logo" width="200px"alt="logo" />
     <SignIn/>
     <SignUp/>
     </div>
