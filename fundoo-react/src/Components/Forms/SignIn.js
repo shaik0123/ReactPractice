@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import fundoologo from '../../Components/Images/Logo.png';
 
 
+
 function SignIn() {
     return (
         <div className="form">
@@ -23,7 +24,7 @@ function SignIn() {
             </div>
             <div className="bottom">
                 <a className="signinbtn" href="/SignUp">Create account</a>
-                <Button className="btn" variant="contained">Register</Button>
+                <Button className="btn" variant="contained">Login</Button>
             </div>
         </div>
     )

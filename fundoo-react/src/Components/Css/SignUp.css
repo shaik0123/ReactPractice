@@ -1,12 +1,23 @@
+
+@media (min-width:1200px){
+
 .Regform{
     display: flex;
     justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.397);
+    margin-top: 45px;
+    padding-left: 40px;
+    padding-bottom: 10px;
+    border-radius: 30px;
+    /* background-color:black; */
+    
+    
 }
 .email{
     margin-top: 10px;
 }
 #outlined{
-    width: 425px;
+    width: 426px;
 }
 #outlined-password{
     width: 190px
@@ -17,8 +28,9 @@ div .Ln{
 div .btn{ 
     margin-left: 200px;
 }
-img{
+.img{
     margin-left: 70px;
+    margin-top: 10px;
 }
 .img1{
     margin-top: 200px;
@@ -30,4 +42,91 @@ div .dob{
     text-decoration: none;
     color: blue;
 
+}
+.p1{
+    text-align: start;
+}
+
+
+    
+}
+@media(min-width:421px) and (max-width:768px){
+    div .Ln{
+        margin-left: 10px;
+    }
+    div .btn{ 
+        margin-left: 280px;
+    }
+    .email{
+        margin-top: 10px;
+    }
+    #outlined{
+        width: 426px;
+    }
+    div .dob{
+        margin-left: 10px;
+    }
+    .signinbtn{
+        text-decoration: none;
+        color: blue;
+    
+    }
+    .img{
+        margin-left: 90px;
+    }
+    h1{
+        padding-right: 50px;
+    }
+    p{
+        padding-right: 50px;   
+    }
+    .p1{
+        text-align: start;
+    }
+
+}
+@media(max-width:420px){
+   
+    .img{
+        padding-left: 45px;
+    }
+    .img1{
+        display: none;
+    }
+    .signinbtn{
+        text-decoration: none;
+        color: blue;
+        margin-left: 30px;
+    
+    }
+    div .btn{ 
+        margin-left: 280px;
+    }
+    .Fn{
+        padding: 15px;
+    
+    }
+    .email{
+        padding: 10px;
+        margin-left: 5px;
+    }
+    div .Ln{
+        margin-top: 15px;
+    }
+    .pcf{
+        padding: 10px;
+        margin-left: 5px;
+    }
+    div.dob{
+        margin-top: 15px;
+    }
+    #outlined-p,#outlined-cp,#outlined,#outlined-fn,#outlined-ln{
+        width: 360px;
+    }
+    .p1{
+    
+        margin-right: 110px;
+    }
+    
+    
 }
