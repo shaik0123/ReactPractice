@@ -1,132 +1,166 @@
-
-@media (min-width:1200px){
-
-.Regform{
+/* .outer{
     display: flex;
-    justify-content: center;
-    border: 1px solid rgba(0, 0, 0, 0.397);
-    margin-top: 45px;
-    padding-left: 40px;
-    padding-bottom: 10px;
+    align-items: center;
+    justify-items: center;
+    background-color: red;
+    
+}
+.maindiv{
+    background-color: yellow;
+    margin: auto;
+    width: 80vw;
+    height: 100vh;
+    border: 1px solid rgba(0, 0, 0, 0.247);
     border-radius: 30px;
-    /* background-color:black; */
-    
-    
+    display: flex;
+    align-items: center;
+    justify-items: center;
+
+}
+.feilds{
+    background-color: aquamarine;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+.FnameLname{
+    display: flex;
+    flex-direction: column;
+
+}
+.FnLn{
+    width: 63%;
+    display: flex;
+    justify-content: space-between;
+        
 }
 .email{
-    margin-top: 10px;
+    width: 30vw;
+    padding: 1%;
 }
-#outlined{
-    width: 426px;
+
+.btns{
+    width: 30vw;
+    display: flex;
+    justify-content: space-between;
 }
-#outlined-password{
-    width: 190px
-}
-div .Ln{
-    margin-left: 10px;
-}
-div .btn{ 
-    margin-left: 200px;
+.Link{
+    color: blue;
+    text-decoration: none;
 }
 .img{
-    margin-left: 70px;
-    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 100%;
+} */
+.outer{
+    width: 100vw;
+    height: 80vh;
+    margin-top: 10vh;
 }
-.img1{
-    margin-top: 200px;
+.maindiv{
+    background-color: yellow;
+    width: 70%;
+    height: 100%;
+    margin: auto;
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.307);
+    border-radius: 30px;
+    
 }
-div .dob{
-    margin-left: 10px;
+.feilds{
+    background-color: antiquewhite;
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 }
-.signinbtn{
-    text-decoration: none;
-    color: blue;
+.imgup{
+    padding-top: 4%;
+}
+.FnLn{
+    /* background-color: red; */
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1%;
+    align-items: center;
+    /* border: 1px solid blue; */
 
+    
 }
-.p1{
+/* div .Lname{
+    margin-left: 8%;
+} */
+.email{
+    /* background-color: red; */
+    /* border: 1px solid blue; */
+    /* width: 30vw; */
+    width: 65%;
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+}
+ .emailfeild{
+    width: 91%;
+    
+    /* background-color: yellow; */
+}
+/* div .conpass{
+    margin-left: 8%;
+
+} */
+.p{
+    /* background-color: red; */
+    /* border: 1px solid blue; */
+
+    width: 65%;
     text-align: start;
 }
-
-
-    
+.showpass{
+    width: 65%;
 }
-@media(min-width:421px) and (max-width:768px){
-    div .Ln{
-        margin-left: 10px;
-    }
-    div .btn{ 
-        margin-left: 280px;
-    }
-    .email{
-        margin-top: 10px;
-    }
-    #outlined{
-        width: 426px;
-    }
-    div .dob{
-        margin-left: 10px;
-    }
-    .signinbtn{
-        text-decoration: none;
-        color: blue;
-    
-    }
-    .img{
-        margin-left: 90px;
-    }
-    h1{
-        padding-right: 50px;
-    }
-    p{
-        padding-right: 50px;   
-    }
-    .p1{
-        text-align: start;
-    }
+.img{
+    background-color: rgb(182, 115, 27);
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+.btns{
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid blue; */
 
 }
-@media(max-width:420px){
-   
-    .img{
-        padding-left: 45px;
+.Link{
+    color: blue;
+    text-decoration: none;
+}
+@media (max-width: 780px){
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-    .img1{
+    .img{
         display: none;
     }
-    .signinbtn{
-        text-decoration: none;
-        color: blue;
-        margin-left: 30px;
-    
-    }
-    div .btn{ 
-        margin-left: 280px;
-    }
-    .Fn{
-        padding: 15px;
-    
-    }
-    .email{
-        padding: 10px;
-        margin-left: 5px;
-    }
-    div .Ln{
-        margin-top: 15px;
-    }
-    .pcf{
-        padding: 10px;
-        margin-left: 5px;
-    }
-    div.dob{
-        margin-top: 15px;
-    }
-    #outlined-p,#outlined-cp,#outlined,#outlined-fn,#outlined-ln{
-        width: 360px;
-    }
-    .p1{
-    
-        margin-right: 110px;
-    }
-    
     
 }

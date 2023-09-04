@@ -1,49 +1,53 @@
-
-.form{
+.main{
+    /* background-color: yellow; */
+    width: 100vw;
+    height: 80vh;
+    margin-top: 10vh;
+}
+.Loginform{
+    /* background-color: red; */
+    width: 50%;
+    height: 100%;
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgba(0, 0, 0, 0.272);
-    width: 600px;
-    height: 600px;
-    border-radius: 20px;
-    margin-top: 50px;    
-}
-.input{
-    margin: 10px;
-}
-p{
-    text-align: center;
-}
-h1{
-    text-align: center;
-    
-}
-div.btn{
-    display: flex;
-    flex-direction: row;
-    justify-items: left;   
-}
-.app{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    flex-flow: column;
-    
-}
-.anchor{
-    color: blue;
-    font-weight: bold;
-    margin-right: 260px;
-}
-.standard-basic{
-    width: 400px;
-}
-.bottom{
-    margin: 20px;
-
+    border: 1px solid rgba(0, 0, 0, 0.307);
+    border-radius: 30px;
 }
 .imgin{
-    margin-left: 10px;
+    padding-top: 1%;
+    width: 25%;
+}
+.emailpassinput{
+    width:60%;
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    /* background-color: antiquewhite; */
+}
+.inputPass{
+    /* background-color: olivedrab; */
+    width: 60%;
+    padding: 2%;
+}
+.anchor,.signupbtn{
+    text-decoration: none;
+    color: blue;
+}
+.bottom{
+    padding: 4%;
+    /* background-color:brown; */
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+@media (max-width: 780px){
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
 }

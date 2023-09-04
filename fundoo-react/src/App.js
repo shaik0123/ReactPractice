@@ -2,13 +2,26 @@ import logo from './logo.svg';
 //import './App.css';
 import SignIn from './Components/Forms/SignIn';
 import SignUp from './Components/Forms/SignUp';
-
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 
 function App() {
   return (
-    
+    <Router>
+      <Routes>
+        <Route path="/SignUp" element={<SignUp/>}>
+        </Route>
+        <Route path="/SignIn" element={<SignIn/>}>
+        </Route>
+      </Routes>
+    </Router>
+
     // <div className="App">
     //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
@@ -26,10 +39,10 @@ function App() {
     //     </a>
     //   </header>
     //</div>
-    <div className='app'>
-    <SignIn/>
-    <SignUp/>
-    </div>
+    // <div className='app'>
+    // <SignIn/>
+    // <SignUp/>
+    // </div>
   );
 }
 
