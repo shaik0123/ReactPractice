@@ -1,72 +1,10 @@
-/* .outer{
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    background-color: red;
-    
-}
-.maindiv{
-    background-color: yellow;
-    margin: auto;
-    width: 80vw;
-    height: 100vh;
-    border: 1px solid rgba(0, 0, 0, 0.247);
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-items: center;
-
-}
-.feilds{
-    background-color: aquamarine;
-    width: 60%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-   
-}
-.FnameLname{
-    display: flex;
-    flex-direction: column;
-
-}
-.FnLn{
-    width: 63%;
-    display: flex;
-    justify-content: space-between;
-        
-}
-.email{
-    width: 30vw;
-    padding: 1%;
-}
-
-.btns{
-    width: 30vw;
-    display: flex;
-    justify-content: space-between;
-}
-.Link{
-    color: blue;
-    text-decoration: none;
-}
-.img{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 40%;
-    height: 100%;
-} */
 .outer{
     width: 100vw;
     height: 80vh;
     margin-top: 10vh;
 }
 .maindiv{
-    background-color: yellow;
+    /* background-color: yellow; */
     width: 70%;
     height: 100%;
     margin: auto;
@@ -79,7 +17,7 @@
     
 }
 .feilds{
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
     width: 65%;
     height: 100%;
     display: flex;
@@ -134,7 +72,7 @@
     width: 65%;
 }
 .img{
-    background-color: rgb(182, 115, 27);
+    /* background-color: rgb(182, 115, 27); */
     width: 40%;
     height: 100%;
     display: flex;
