@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import fundoologo from '../../Components/Images/Logo.png';
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { signin } from "../../Services/UserServices";
 
 
 
@@ -28,7 +29,7 @@ function SignIn() {
         passwordHelper: "",
     })
 
-    const handlelogin = (e) => {
+    const handlelogin = async(e) => {
         // console.log(userlogin);
         // alert("user registration successfull");
         let emailTest = emailRegex.test(userlogin.email);
@@ -64,6 +65,13 @@ function SignIn() {
 
         }
         console.log(userlogin)
+        if( emailTest === true && passwordTest === true){
+            let response = await signin(userlogin);
+            console.log(response);
+            localStorage.setItem("token",response.data.data);
+            
+
+        }
     };
 
    

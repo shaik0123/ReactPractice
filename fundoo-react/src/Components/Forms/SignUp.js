@@ -7,6 +7,7 @@ import SignUpLogo from '../../Components/Images/signuplogo.png';
 import { Checkbox } from "@mui/material";
 import { Link } from "react-router-dom";
 import { FormControlLabel } from "@mui/material";
+import { signup } from "../../Services/UserServices";
 
 
 function SignUp() {
@@ -24,11 +25,14 @@ function SignUp() {
         values = e.target.value;
         setuserSignUp({ ...userSignUp, [names]: values })
     };
+    const confirmpass =(e) =>{
+        setuserSignUp({...userSignUp,confirmpassword:e.target.value})
+    }
     const firstnameRegex = /^[a-zA-Z ]{2,30}$/;
     const lastnameRegex = /^[a-zA-Z ]{2,30}$/;
     const emailRegex = /^[a-z]{3,}(.[0-9a-z]*)?@([a-z]){2,}.[a-z]+(.in)*$/;
     const passwordRegex = /^.*(?=.{8,})(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=]).*$/;
-    const confirmpasswordRegex = /^.*(?=.{8,})(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=]).*$/;
+    //const confirmpasswordRegex = /^.*(?=.{8,})(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=]).*$/;
 
     const [errorObj, setErrorObj] = useState({
         firstnameError:false,
@@ -43,15 +47,15 @@ function SignUp() {
         confirmpasswordHelper:""
     })
 
-    const handlesignup = (e) => {
+    const handlesignup  = async (e) => {
         // console.log(userSignUp);
         // alert("user registration successfull");
         let firstnameTest = firstnameRegex.test(userSignUp.firstname);
         let lastnameTest = lastnameRegex.test(userSignUp.lastname);
         let emailTest = emailRegex.test(userSignUp.email);
         let passwordTest =passwordRegex.test(userSignUp.password);
-        let confirmpasswordTest = confirmpasswordRegex.test(userSignUp.comfirmpassword);
-        if (firstnameTest == false) {
+        let confirmpasswordTest = userSignUp.password === userSignUp.confirmpassword;
+        if (firstnameTest === false) {
             setErrorObj((prev) => ({
                 ...prev,
                 firstnameError: true,
@@ -66,7 +70,7 @@ function SignUp() {
             }));
 
         }
-        if (lastnameTest == false) {
+        if (lastnameTest === false) {
             setErrorObj((prev) => ({
                 ...prev,
                 lastnameError: true,
@@ -81,7 +85,7 @@ function SignUp() {
             }));
 
         }
-        if (emailTest == false) {
+        if (emailTest === false) {
             setErrorObj((prev) => ({
                 ...prev,
                 emailError: true,
@@ -96,7 +100,7 @@ function SignUp() {
             }));
 
         }
-        if (passwordTest == false) {
+        if (passwordTest === false) {
             setErrorObj((prev) => ({
                 ...prev,
                 passwordError: true,
@@ -111,7 +115,7 @@ function SignUp() {
             }));
 
         }
-        if (confirmpasswordTest == false) {
+        if (confirmpasswordTest === false) {
             setErrorObj((prev) => ({
                 ...prev,
                 confirmpasswordError: true,
@@ -127,6 +131,13 @@ function SignUp() {
 
         }
         console.log(userSignUp);
+        if(firstnameTest === true && lastnameTest === true && emailTest === true && passwordTest === true && confirmpasswordTest === true){
+            let response = await signup(userSignUp);
+            console.log(response);
+           // localStorage.setItem("token",responce.data.id);
+            
+
+        }
     }
     return (
         <div className="outer">
@@ -149,7 +160,7 @@ function SignUp() {
                     <div className="FnLn">
                         <div><TextField id="outlined-p" type="password" label="Password" variant="outlined" required name="password" value={userSignUp.password} onChange={signupinput} error={errorObj.passwordError} helperText={errorObj.passwordHelper}/></div>
 
-                        <div><TextField className="conpass" id="outlined-cp" type="password" label="Confirm Password" variant="outlined" required name="comfirmpassword" value={userSignUp.comfirmpassword} onChange={signupinput} error={errorObj.confirmpasswordError} helperText={errorObj.confirmpasswordHelper}/></div>
+                        <div><TextField className="conpass" id="outlined-cp" type="password" label="Confirm Password" variant="outlined" required name="confirmpassword" value={userSignUp.confirmpassword} onChange={confirmpass} error={errorObj.confirmpasswordError} helperText={errorObj.confirmpasswordHelper}/></div>
                     </div>
                     <div className="showpass">
                         <p>Use 8 or more characters with a mix of letters,numbers &symbols</p>
