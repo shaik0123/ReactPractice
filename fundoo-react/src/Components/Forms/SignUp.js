@@ -135,6 +135,9 @@ function SignUp() {
             let response = await signup(userSignUp);
             console.log(response);
            // localStorage.setItem("token",responce.data.id);
+           setTimeout(() => {
+            window.location.reload()
+           }, 2000);
             
 
         }
@@ -167,7 +170,7 @@ function SignUp() {
                         <FormControlLabel control={<Checkbox />} label="Show Password" />
                     </div>
                     <div className="btns">
-                        <div><Link className="Link" to="/SignIn">Sign in insted</Link></div>
+                        <div><Link className="Link" to="/">Sign in insted</Link></div>
                         <div><Button variant="contained" onClick={handlesignup}>Next</Button></div>
                     </div>
                 </div>

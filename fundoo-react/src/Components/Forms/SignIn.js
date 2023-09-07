@@ -29,7 +29,8 @@ function SignIn() {
         passwordHelper: "",
     })
 
-    const handlelogin = async(e) => {
+    const handlelogin = async(event) => {
+        event.preventDefault();
         // console.log(userlogin);
         // alert("user registration successfull");
         let emailTest = emailRegex.test(userlogin.email);
@@ -69,6 +70,9 @@ function SignIn() {
             let response = await signin(userlogin);
             console.log(response);
             localStorage.setItem("token",response.data.data);
+            setTimeout(() => {
+                 window.location.reload()
+            }, 2000);
             
 
         }
