@@ -1,0 +1,14 @@
+.displaytitle{
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+}
+.displaynote{
+    display: flex;
+    padding: 2%;
+}
+
+.displayicons{
+    display: flex;
+    justify-content: space-around;
+}

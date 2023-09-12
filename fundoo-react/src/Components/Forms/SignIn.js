@@ -3,9 +3,10 @@ import '../../Components/Css/SignIn.css';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import fundoologo from '../../Components/Images/Logo.png';
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useState } from "react";
 import { signin } from "../../Services/UserServices";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -20,6 +21,8 @@ function SignIn() {
         value = e.target.value;
         setuserlogin({ ...userlogin, [name]: value })
     };
+    const navigate = useNavigate();
+
     const emailRegex = /^[a-z]{3,}(.[0-9a-z]*)?@([a-z]){2,}.[a-z]+(.in)*$/;
     const passwordRegex = /^.*(?=.{8,})(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=]).*$/;
     const [errorObj, setErrorObj] = useState({
@@ -30,7 +33,6 @@ function SignIn() {
     })
 
     const handlelogin = async(event) => {
-        event.preventDefault();
         // console.log(userlogin);
         // alert("user registration successfull");
         let emailTest = emailRegex.test(userlogin.email);
@@ -70,11 +72,7 @@ function SignIn() {
             let response = await signin(userlogin);
             console.log(response);
             localStorage.setItem("token",response.data.data);
-            setTimeout(() => {
-                 window.location.reload()
-            }, 2000);
-            
-
+            navigate("/dashboard")
         }
     };
 

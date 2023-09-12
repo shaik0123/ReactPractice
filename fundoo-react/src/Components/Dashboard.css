@@ -1,0 +1,6 @@
+.takethree{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-left: 10vw;
+}

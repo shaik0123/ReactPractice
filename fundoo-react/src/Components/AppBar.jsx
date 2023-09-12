@@ -11,14 +11,10 @@ import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
@@ -28,15 +24,12 @@ import RefreshOutlinedIcon from '@mui/icons-material/RefreshOutlined';
 import ViewStreamOutlinedIcon from '@mui/icons-material/ViewStreamOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import { blueGrey } from '@mui/material/colors';
 import Image from '../Components/Images/keep.png';
-
-
+import { useNavigate } from 'react-router-dom';
 
 
 const drawerWidth = 240;
@@ -108,7 +101,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
-    borderRadius:10,
+    borderRadius: 10,
     backgroundColor: alpha(theme.palette.common.black, 0.15),
     '&:hover': {
         backgroundColor: alpha(theme.palette.common.black, 0.25),
@@ -116,7 +109,7 @@ const Search = styled('div')(({ theme }) => ({
     marginRight: theme.spacing(2),
     marginLeft: 0,
     width: '100%',
-    padding:'1%',
+    padding: '1%',
     [theme.breakpoints.up('sm')]: {
         marginLeft: theme.spacing(3),
         width: 'auto',
@@ -125,7 +118,7 @@ const Search = styled('div')(({ theme }) => ({
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
     padding: theme.spacing(0, 2),
-    paddingBottom:'2%',
+    paddingBottom: '2%',
     height: '100%',
     position: 'absolute',
     pointerEvents: 'none',
@@ -151,6 +144,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function MiniDrawer() {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
+    const navigate = useNavigate()
+
 
     const handleDrawer = () => {
         setOpen(!open);
@@ -167,22 +162,19 @@ export default function MiniDrawer() {
     const handleClose = () => {
         setAnchorEl(null);
     };
-    const handleLogout = () =>{
-        if(localStorage.key){
+    const handleLogout = () => {
+        if (localStorage.key) {
             localStorage.removeItem("token")
+            navigate("/")
         }
-        setTimeout(() => {
-            window.location.reload()
-        }, 2000);
-
     }
 
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
             <AppBar position="fixed">
-                
-                <Toolbar style={{backgroundColor:'white'}}>
+
+                <Toolbar style={{ backgroundColor: 'white' }}>
                     <IconButton
                         color="black"
                         aria-label="open drawer"
@@ -200,14 +192,12 @@ export default function MiniDrawer() {
                             Keep
                         </Typography>
                     </div>
-                    {/* <SearchIcon /> */}
-                                     
-                    <div style={{ marginLeft: '10vw' ,color:'black'}}>
+                    <div style={{ marginLeft: '10vw', color: 'black' }}>
                         <Search>
                             <SearchIconWrapper>
                                 <SearchIcon />
                             </SearchIconWrapper>
-                            <StyledInputBase 
+                            <StyledInputBase
                                 placeholder="Search…"
                                 inputProps={{ 'aria-label': 'search' }}
                                 sx={{
@@ -265,19 +255,6 @@ export default function MiniDrawer() {
                     >
                         <AppsOutlinedIcon />
                     </IconButton>
-                    {/* <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        
-                        edge="start"
-                        sx={{
-                            marginRight: 5
-                           
-                        }}
-                    >
-                        <AccountCircleOutlinedIcon />
-                    </IconButton> */}
-
                     <div>
                         <IconButton
                             size="large"
@@ -308,16 +285,11 @@ export default function MiniDrawer() {
                             <MenuItem onClick={handleLogout}>Log Out</MenuItem>
                         </Menu>
                     </div>
-
                 </Toolbar>
-
             </AppBar>
             <Drawer variant="permanent" open={open}>
-                <DrawerHeader>
-                    {/* <IconButton onClick={handleDrawerClose}>
-                        {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-                    </IconButton> */}
-                </DrawerHeader>
+                    <DrawerHeader>
+                    </DrawerHeader>
                 <Divider />
                 <List>
                     {['Notes', 'Remainder', 'Edit labels', 'Archive', 'Trash'].map((text, index) => (
@@ -336,7 +308,7 @@ export default function MiniDrawer() {
                                         justifyContent: 'center',
                                     }}
                                 >
-                                    {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
+                                
                                     {index === 0 ? <LightbulbOutlinedIcon /> : " "}
                                     {index === 1 ? <NotificationsNoneOutlinedIcon /> : ""}
                                     {index === 2 ? <EditOutlinedIcon /> : ""}
@@ -348,62 +320,10 @@ export default function MiniDrawer() {
                         </ListItem>
                     ))}
                 </List>
-                {/* <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List> */}
             </Drawer>
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <DrawerHeader />
-                {/* <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-          enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-          imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-          Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-          Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-          nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-          leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-          feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-          consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-          sapien faucibus et molestie ac.
-        </Typography>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
-          eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
-          neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
-          tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis
-          sed odio morbi. Euismod lacinia at quis risus sed vulputate odio. Morbi
-          tincidunt ornare massa eget egestas purus viverra accumsan in. In hendrerit
-          gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
-          et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis
-          tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-          eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-          posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography> */}
             </Box>
-        </Box>
+         </Box>
     );
 }

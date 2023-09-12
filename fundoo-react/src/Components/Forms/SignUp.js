@@ -134,12 +134,6 @@ function SignUp() {
         if(firstnameTest === true && lastnameTest === true && emailTest === true && passwordTest === true && confirmpasswordTest === true){
             let response = await signup(userSignUp);
             console.log(response);
-           // localStorage.setItem("token",responce.data.id);
-           setTimeout(() => {
-            window.location.reload()
-           }, 2000);
-            
-
         }
     }
     return (
