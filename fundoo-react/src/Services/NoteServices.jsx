@@ -32,3 +32,29 @@ export const GetAllNotes = async()=>{
     )
     return response;
 }
+export const DeleteNote = async(Object)=>{
+    let response = await axios.delete(
+        "https://fundoonote.azurewebsites.net/api/Note/Note",
+        Object,
+        Auth()
+    )
+    return response;
+}
+
+export const TrashNote = async(id)=>{
+    let response = await axios.patch(
+        `https://fundoonote.azurewebsites.net/api/Note/Trash?id=${id}`,
+        null,
+        Auth()
+    )
+    return response;
+}
+
+export const ArchiveNote = async(id)=>{
+    let response = await axios.patch(
+        `https://fundoonote.azurewebsites.net/api/Note/Archive?id=${id}`,
+        null,
+        Auth()
+    )
+    return response;
+}

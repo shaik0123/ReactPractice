@@ -17,7 +17,7 @@ import { CreateNote, GetAllNotes } from '../../Services/NoteServices';
 
 
 
-export default function SimplePaperTwo({settoggle}) {
+export default function SimplePaperTwo({settoggle,ResponseData}) {
   // const [retrivedata,setretrivedata]=React.useState()
   const [data,setData] = React.useState({
     Title:"",
@@ -36,6 +36,7 @@ export default function SimplePaperTwo({settoggle}) {
     if(data != null && data.Title != ""){
       let response = await CreateNote(data)
       console.log(response)
+      ResponseData()
     }
 }
   

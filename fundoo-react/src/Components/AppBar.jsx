@@ -141,7 +141,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-export default function MiniDrawer() {
+export default function MiniDrawer({settypeOfNotes}) {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
     const navigate = useNavigate()
@@ -309,11 +309,11 @@ export default function MiniDrawer() {
                                     }}
                                 >
                                 
-                                    {index === 0 ? <LightbulbOutlinedIcon /> : " "}
+                                    {index === 0 ? <LightbulbOutlinedIcon onClick={()=>settypeOfNotes('Notes')}/> : " "}
                                     {index === 1 ? <NotificationsNoneOutlinedIcon /> : ""}
                                     {index === 2 ? <EditOutlinedIcon /> : ""}
-                                    {index === 3 ? <ArchiveOutlinedIcon /> : ""}
-                                    {index === 4 ? <DeleteForeverOutlinedIcon /> : ""}
+                                    {index === 3 ? <ArchiveOutlinedIcon onClick={()=>settypeOfNotes('Archive')}/> : ""}
+                                    {index === 4 ? <DeleteForeverOutlinedIcon onClick={()=>settypeOfNotes('Trash')}/> : ""}
                                 </ListItemIcon>
                                 <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
                             </ListItemButton>
